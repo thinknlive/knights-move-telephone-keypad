@@ -5,11 +5,15 @@ Given a given length N, determine the number of digit sequences that can be gene
 
 Usage: node knights-move-telephone-pad.js <N> [Loglevel]
 
-### 1 2 3 ###
-### 4 5 6 ###
-### 7 8 9 ###
-### * 0 # ###
+```
+|---|---|---|
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+| * | 0 | # |
+```
 
+```
 var moves = [
   [ 0, [4, 6]],
   [ 1, [6, 8]],
@@ -22,3 +26,4 @@ var moves = [
   [ 8, [1, 3]],
   [ 9, [2, 4]],
 ];
+```
