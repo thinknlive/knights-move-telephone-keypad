@@ -6,11 +6,6 @@
 //7 8 9
 //* 0 #
 
-// 0 1 2 3
-// 1 2 3 0
-// 2 3 0 1
-// 3 0 1 2
-
 var moves = [
   /* 0 */ [4, 6],
   /* 1 */ [6, 8],
@@ -27,14 +22,14 @@ var moves = [
 var args = process.argv.slice(2);
 var maxdepth = args && args.length ? (parseInt(args[0],10)||1) : 1;
 var cnt = 0;
-var verbose = args && args.length > 1 ? !!(parseInt(args[1],10)||0) : false;
+var verbose = args && args.length > 1 ? (parseInt(args[1],10)||0) : 0;
 
-//verbose ? console.log('START the Knights! : maxdepth ['+maxdepth+']') : false;
+verbose > 1 ? console.log('START the Knights! : maxdepth ['+maxdepth+']') : null;
 
 function walker (depth, node, seq) {
   if (depth >= maxdepth) {
     cnt += 1;
-    verbose ? console.log(
+    verbose > 0 ? console.log(
               //'cnt ['+cnt+']; '+
               seq.join('')+' '                                // The digit sequence
               +seq.slice(0).sort().join('')+' '               // Sorted
@@ -57,4 +52,4 @@ moves.forEach(
     walker(1, ndx,  [ ndx ]);
   });
 
-//verbose ? console.log('END: maxdepth ['+maxdepth+']; cnt ['+cnt+']') : false;
+verbose > 1 ? console.log('END: maxdepth ['+maxdepth+']; cnt ['+cnt+']') : null;
