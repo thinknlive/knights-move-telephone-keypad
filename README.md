@@ -1,7 +1,7 @@
 # knights-move-telephone-keypad
 
 Determine a data structure to represent the possible Knight's moves on a telephone keypad.
-Given a given length N, determine the number of digit sequences that can be generated.
+Given a length N, determine the number of distinct digit sequences that can be generated for that N.
 
 Usage: node knights-move-telephone-pad.js <N> [Loglevel]
 
