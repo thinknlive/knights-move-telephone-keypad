@@ -6,6 +6,8 @@ Given a length N, determine the number of distinct digit sequences that can be g
 Usage: node knights-move-telephone-pad.js <N> [Loglevel]
 
 ```
+Keypad:
+
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
 | 7 | 8 | 9 |
@@ -13,6 +15,8 @@ Usage: node knights-move-telephone-pad.js <N> [Loglevel]
 ```
 
 ```
+Possible moves:
+
 var moves = [
   [ 0, [4, 6]],
   [ 1, [6, 8]],
