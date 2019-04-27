@@ -51,4 +51,4 @@ moves.forEach(
     walker(1, ndx,  [ ndx ]);
   });
 
-verbose > 1 ? console.log('END: maxdepth ['+maxdepth+']; cnt ['+cnt+']') : null;
+verbose > 1 ? console.log('END: maxdepth ['+maxdepth+']; cnt ['+cnt+']') : console.log(cnt);
