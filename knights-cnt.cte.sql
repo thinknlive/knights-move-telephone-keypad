@@ -9,7 +9,7 @@
 .timer on
 with recursive
 depth (n) as (
-  values (16)  -- How deep to go
+  values (14)  -- How deep to go
 ),
 moves (node, child) as (
 values
@@ -34,7 +34,7 @@ walker (lvl, node,  child, moves) AS (
     moves
   where node in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
   UNION ALL
-  SELECT
+  SELECT distinct
     lvl+1,
     a.node,
     b.child,
@@ -42,7 +42,7 @@ walker (lvl, node,  child, moves) AS (
   FROM
     walker a, moves b
   where
-    (a.child is null or a.child=b.node)
+    a.child=b.node -- and (a.child not in (4, 6))
     and lvl < (select n from depth)
   order by 2 desc
 )
@@ -50,6 +50,7 @@ select lvl, count(*) as cnt from (
   select lvl, moves, count(*) as cnt
   from
     walker
+  where lvl = (select n from depth)
   group by lvl, moves
   having max(length(moves))
 ) A
