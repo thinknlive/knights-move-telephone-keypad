@@ -5,6 +5,8 @@ Given a length N, determine the number of distinct digit sequences that can be g
 
 Usage: node knights-move-telephone-pad.js <N> [Loglevel]
 
+The source files show solutions in both javascript and SQL (using recursive common table expressions)
+
 ```
 Keypad:
 
